@@ -1,0 +1,227 @@
+:root {
+    --primary: #4361ee;
+    --secondary: #3f37c9;
+    --success: #4cc9f0;
+    --danger: #f72585;
+    --bg: #f8f9fd;
+    --card-grad: linear-gradient(135deg, #4361ee 0%, #7209b7 100%);
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+body { 
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-wrapper {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background: var(--white);
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    min-height: 450px;
+}
+
+/* Choice Section Styling */
+.choice-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.choice-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 18px;
+    border: none;
+    border-radius: 15px;
+    background: var(--primary);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.choice-btn.secondary {
+    background: #eef2ff;
+    color: var(--primary);
+}
+
+.choice-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(67, 97, 238, 0.2);
+}
+
+.back-nav {
+    font-size: 14px;
+    color: #888;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.back-nav:hover { color: var(--primary); }
+
+/* Bank Logo & Other styles from your original code */
+.bank-logo { text-align: center; margin-bottom: 30px; }
+.bank-logo p { color: #888; font-size: 14px; margin-top: 5px; }
+.bank-logo i { font-size: 40px; color: var(--primary); margin-bottom: 10px; }
+.bank-logo h2 { font-weight: 700; color: #1a1a1a; letter-spacing: -1px; }
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0a0a0;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 14px 15px 14px 45px;
+    border: 1.5px solid #eee;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary);
+    background: var(--white);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.1);
+}
+
+.btn-main {
+    background: var(--primary);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-main:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3); }
+
+#toggle-text { text-align: center; margin-top: 20px; font-size: 13px; color: #666; }
+#toggle-text a { color: var(--primary); font-weight: 600; text-decoration: none; }
+
+/* Dashboard UI */
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.greeting { font-size: 13px; color: #888; }
+#user-display { font-weight: 700; color: #1a1a1a; }
+.logout-btn { background: #feeef2; color: var(--danger); border: none; width: 40px; height: 40px; border-radius: 10px; cursor: pointer; }
+
+/* Premium Card */
+.balance-card {
+    background: var(--card-grad);
+    padding: 25px;
+    border-radius: 20px;
+    color: white;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(67, 97, 238, 0.2);
+}
+
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.chip { width: 35px; height: 25px; background: #ffd700; border-radius: 4px; opacity: 0.8; }
+.card-mid p { font-size: 12px; opacity: 0.8; }
+.card-mid h1 { font-size: 32px; font-weight: 700; margin-top: 5px; }
+.card-mid h1 small { font-size: 16px; font-weight: 400; }
+.card-bottom { margin-top: 20px; font-size: 10px; letter-spacing: 2px; opacity: 0.7; }
+
+/* Quick Actions Grid */
+.section-label { font-size: 14px; font-weight: 600; margin-bottom: 15px; color: #444; }
+.actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.action-item i {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border: 1px solid #eee;
+    border-radius: 15px;
+    font-size: 18px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.action-item span { font-size: 11px; font-weight: 600; color: #666; }
+.btn-deposit i { color: #2ecc71; }
+.btn-withdraw i { color: #e74c3c; }
+.btn-transfer i { color: #3498db; }
+.btn-history i { color: #9b59b6; }
+
+.action-item:hover i { transform: translateY(-5px); background: var(--primary); color: white; border-color: var(--primary); }
+
+/* Modal & Animations */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4); backdrop-filter: blur(5px);
+    display: flex; justify-content: center; align-items: center; z-index: 999;
+}
+
+.modal-content {
+    background: white; padding: 25px; border-radius: 25px;
+    width: 90%; max-width: 360px;
+}
+
+.modal-header { display: flex; justify-content: space-between; margin-bottom: 20px; }
+.modal-header i { cursor: pointer; color: #888; }
+
+.btn-confirm { background: var(--primary); color: white; border: none; padding: 14px; border-radius: 12px; width: 100%; font-weight: 600; margin-top: 20px; cursor: pointer; }
+.btn-cancel { background: transparent; color: #888; border: none; width: 100%; margin-top: 10px; cursor: pointer; font-size: 13px; }
+
+.hidden { display: none !important; }
+
+/* Animations */
+.fade-in { animation: fadeIn 0.5s ease; }
+.scale-up { animation: scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.slide-up { animation: slideUp 0.4s ease; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.history-section { margin-top: 25px; padding: 15px; background: #fafafa; border-radius: 15px; border: 1px solid #eee; }
+.history-header { display: flex; justify-content: space-between; margin-bottom: 10px; color: #444; font-size: 14px; font-weight: 600; }
+#history-list li { list-style: none; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 12px; color: #555; }
