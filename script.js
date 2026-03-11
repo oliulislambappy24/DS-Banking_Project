@@ -1,6 +1,6 @@
 // ডেটা স্টোরেজ
-let accounts = JSON.parse(localStorage.getItem('oib_accounts')) || [];
-let transactions = JSON.parse(localStorage.getItem('oib_transactions')) || [];
+let accounts = JSON.parse(localStorage.getItem('brm_accounts')) || [];
+let transactions = JSON.parse(localStorage.getItem('brm_transactions')) || [];
 let currentAcc = null;
 let currentAction = "";
 
@@ -23,10 +23,10 @@ function goBack() {
 
 // UI State Management
 function setLoginUI() {
-    document.getElementById('form-title').innerText = "OIB Bank Login";
+    document.getElementById('form-title').innerText = "BRM Bank Login";
     document.getElementById('main-btn').innerText = "Login Now";
     document.getElementById('extra-fields').classList.add('hidden');
-    document.getElementById('toggle-text').innerHTML = 'New to OIB? <a href="javascript:void(0)" onclick="toggleAuth()">Create Account</a>';
+    document.getElementById('toggle-text').innerHTML = 'New to BRM? <a href="javascript:void(0)" onclick="toggleAuth()">Create Account</a>';
 }
 
 function setRegisterUI() {
@@ -37,7 +37,7 @@ function setRegisterUI() {
 }
 
 function toggleAuth() {
-    const isLogin = document.getElementById('form-title').innerText === "OIB Bank Login";
+    const isLogin = document.getElementById('form-title').innerText === "BRM Bank Login";
     if (isLogin) {
         setRegisterUI();
     } else {
@@ -150,7 +150,7 @@ function updateBalanceUI() {
 
 function addLog(type, amount) {
     transactions.push({ accNo: currentAcc.accNo, type, amount, time: Date.now() });
-    localStorage.setItem('oib_transactions', JSON.stringify(transactions));
+    localStorage.setItem('brm_transactions', JSON.stringify(transactions));
 }
 
 function displayTransactions() {
@@ -174,7 +174,7 @@ function displayTransactions() {
 }
 
 function saveData() { 
-    localStorage.setItem('oib_accounts', JSON.stringify(accounts)); 
+    localStorage.setItem('brm_accounts', JSON.stringify(accounts)); 
 }
 
 function logout() { 

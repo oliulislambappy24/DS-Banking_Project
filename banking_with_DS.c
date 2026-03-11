@@ -24,6 +24,7 @@ struct Node *head = NULL;
 #define ACCOUNT_FILE "accounts.dat"
 #define TRANSACTION_FILE "transactions.txt"
 
+
 /* ================= Time Utility ================= */
 void getTime(char *buffer) {
     time_t t = time(NULL);
@@ -192,6 +193,20 @@ void withdrawMoney(struct Node *acc) {
     printf("Withdraw successful.\nThank you for banking with us - OIB Bank\n");
 }
 
+
+/* ================= Fund Transfer ================= */
+void fundTransfer(struct Node *acc) {
+    int choice;
+    printf("1. Bank Fund Transfer\n2. Mobile Banking Transfer\nChoice: ");
+    scanf("%d", &choice);
+
+    if (choice == 1)
+        bankFundTransfer(acc);
+    else if (choice == 2)
+        mobileBankingTransfer(acc);
+}
+
+
 /* ================= Bank Fund Transfer ================= */
 void bankFundTransfer(struct Node *sender) {
     int choice;
@@ -290,17 +305,6 @@ void mobileBankingTransfer(struct Node *sender) {
     printf("Transfer successful.\nThank you for banking with us - OIB Bank\n");
 }
 
-/* ================= Fund Transfer ================= */
-void fundTransfer(struct Node *acc) {
-    int choice;
-    printf("1. Bank Fund Transfer\n2. Mobile Banking Transfer\nChoice: ");
-    scanf("%d", &choice);
-
-    if (choice == 1)
-        bankFundTransfer(acc);
-    else if (choice == 2)
-        mobileBankingTransfer(acc);
-}
 
 /* ================= Transaction History (1 Hour) ================= */
 void showTransactions() {
