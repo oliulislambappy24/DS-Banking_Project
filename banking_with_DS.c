@@ -172,7 +172,7 @@ void deposit(struct Node *acc) {
     saveAccountsToFile();
     saveTransaction(acc->data.accNo, acc->data.name, "Deposit", amount);
 
-    printf("Deposit successful.\nThank you for banking with us - OIB Bank\n");
+    printf("Deposit successful.\nThank you for banking with us - BRM Bank\n");
 }
 
 /* ================= Withdraw ================= */
@@ -190,7 +190,7 @@ void withdrawMoney(struct Node *acc) {
     saveAccountsToFile();
     saveTransaction(acc->data.accNo, acc->data.name, "Withdraw", amount);
 
-    printf("Withdraw successful.\nThank you for banking with us - OIB Bank\n");
+    printf("Withdraw successful.\nThank you for banking with us - BRM Bank\n");
 }
 
 
@@ -241,7 +241,7 @@ void bankFundTransfer(struct Node *sender) {
         saveTransaction(sender->data.accNo, sender->data.name, "Transfer Out", amount);
         saveTransaction(receiver->data.accNo, receiver->data.name, "Transfer In", amount);
 
-        printf("Transfer successful.\nThank you for banking with us - OIB Bank\n");
+        printf("Transfer successful.\nThank you for banking with us - BRM Bank\n");
     }
     else {
         char bankName[30], ownerName[30], address[50];
@@ -269,7 +269,7 @@ void bankFundTransfer(struct Node *sender) {
         saveTransaction(sender->data.accNo, sender->data.name,
                         "Other Bank Transfer", amount);
 
-        printf("Transfer successful.\nThank you for banking with us - OIB Bank\n");
+        printf("Transfer successful.\nThank you for banking with us - BRM Bank\n");
     }
 }
 
@@ -302,7 +302,7 @@ void mobileBankingTransfer(struct Node *sender) {
     saveTransaction(sender->data.accNo, sender->data.name,
                     "Mobile Banking Transfer", amount);
 
-    printf("Transfer successful.\nThank you for banking with us - OIB Bank\n");
+    printf("Transfer successful.\nThank you for banking with us - BRM Bank\n");
 }
 
 
