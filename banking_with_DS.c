@@ -193,6 +193,10 @@ void withdrawMoney(struct Node *acc) {
     printf("Withdraw successful.\nThank you for banking with us - BRM Bank\n");
 }
 
+/* ================= Function Prototypes (FIX) ================= */
+void bankFundTransfer(struct Node *sender);
+void mobileBankingTransfer(struct Node *sender); 
+
 
 /* ================= Fund Transfer ================= */
 void fundTransfer(struct Node *acc) {
@@ -374,5 +378,4 @@ int main() {
             exit(0);
     }
 }
-
 
